@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 const Header = () => {
   return (
     <Container
-      as={motion.div}
+      as={motion.section}
       initial={{ opacity: 0, y: -180 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

@@ -5,9 +5,11 @@ import { Container, Divider } from "./styled";
 const Experience = () => {
   return (
     <Container as={motion.div}>
-      <h3>Experience</h3>
       <table>
         <tbody>
+          <tr>
+            <td>Experience</td>
+          </tr>
           <tr>
             <td>New Edge Studio</td>
             <td>Freelance Developer</td>

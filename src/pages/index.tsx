@@ -17,6 +17,8 @@ import Spinner from "components/Spinner";
 import Ticker from "components/Ticker";
 import DisplayPic from "images/matt.webp";
 import styled from "styled-components";
+import Gallery from "components/Gallery";
+import useLocoScroll from "hooks/useLocoScroll";
 
 const Content = styled.div`
   position: absolute;
@@ -49,7 +51,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Navigation />
       <Content>
         <div id="about" />
-        <Ticker text="Unveiling Myself" />
+        <Ticker text="A Fearless Introduction" />
         <InnerWrap>
           <ImgWrap>
             <img src={DisplayPic} alt="Matthew Gilligan" />
@@ -81,6 +83,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
         <div id="work" />
         <Ticker text="Frontend Virtuosity" />
+        <Gallery />
 
         <div id="contact" />
         <Ticker text="Inquiries and Invective" />

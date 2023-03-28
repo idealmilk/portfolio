@@ -12,9 +12,19 @@ const config: GatsbyConfig = {
     "gatsby-plugin-anchor-links",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
+    `gatsby-plugin-sass`,
     "gatsby-plugin-sharp",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        javascriptEnabled: true,
+        modifyVars: {
+          "primary-color": "#00BFA6",
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {

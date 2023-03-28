@@ -13,7 +13,7 @@ export const Container = styled(motion.div)`
     width: 100%;
 
     tr {
-      height: 4rem;
+      height: 6rem;
       border-bottom: 1px solid white;
 
       td {

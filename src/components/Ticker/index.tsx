@@ -19,7 +19,7 @@ const Tile = ({ text }: TileProps) => {
     <Container>
       <PageVisibility onChange={handleVisibilityChange}>
         {pageIsVisible && (
-          <Ticker speed={9}>
+          <Ticker speed={12}>
             {() => <h3 style={{ marginRight: "6rem" }}>{text}</h3>}
           </Ticker>
         )}
