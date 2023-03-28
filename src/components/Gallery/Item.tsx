@@ -3,12 +3,13 @@ import React, { useEffect, useRef } from "react";
 import useOnScreen from "hooks/useOnScreen";
 
 import "./styled";
+import { ItemContainer, ItemInfo, ItemWrap } from "./styled";
 
 type GalleryItemProps = {
   src: string;
   category: string;
-  subtitle: string;
   title: string;
+  background: string;
   updateActiveImage: Function;
   index: number;
 };
@@ -16,8 +17,8 @@ type GalleryItemProps = {
 const GalleryItem = ({
   src,
   category,
-  subtitle,
   title,
+  background,
   updateActiveImage,
   index,
 }: GalleryItemProps) => {
@@ -32,24 +33,26 @@ const GalleryItem = ({
   }, [onScreen, index]);
 
   return (
-    <div
+    <ItemContainer
       className={cn("gallery-item-wrapper", { "is-reveal": onScreen })}
       ref={ref}
     >
-      <div></div>
-      <div className={"gallery-item"}>
-        <div className="gallery-item-info">
-          <h1 className="gallery-info-title">{title}</h1>
-          <h2 className="gallery-info-subtitle">{subtitle}</h2>
-          <p className="gallery-info-category">{category}</p>
+      <div />
+      <ItemWrap background={background}>
+        <ItemInfo>
+          <h3>{title}</h3>
+          <p>{category}</p>
+        </ItemInfo>
+
+        <div className="item-image-wrap">
+          <div
+            className="item-image"
+            style={{ backgroundImage: `url(${src})` }}
+          ></div>
         </div>
-        <div
-          className="gallery-item-image"
-          style={{ backgroundImage: `url(${src})` }}
-        ></div>
-      </div>
-      <div></div>
-    </div>
+      </ItemWrap>
+      <div />
+    </ItemContainer>
   );
 };
 
