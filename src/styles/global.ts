@@ -110,7 +110,7 @@ const GlobalStyles = styled.createGlobalStyle`
 
   .image-container {
     width: 100%;
-    height: 100%;
+    max-height: 50rem;
     position: relative;
     overflow: hidden;
     &:after {
@@ -123,7 +123,9 @@ const GlobalStyles = styled.createGlobalStyle`
       right: 0;
     }
     img {
-      width: 1440px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       margin: 0 auto;
     }
   }

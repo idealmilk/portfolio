@@ -22,8 +22,4 @@ export const TextWrap = styled(motion.div)`
 export const ImgWrap = styled.div`
   width: 35%;
   text-align: center;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
 `;
