@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import gsap from "gsap";
-import CSSRulePlugin from "gsap/CSSRulePlugin";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 import { Container } from "./styled";
 import { useInView } from "react-intersection-observer";
@@ -15,6 +15,8 @@ const Image = ({ image }: ImageProps) => {
   const [imageContainerRef, inView] = useInView();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
+
+  gsap.registerPlugin(CSSRulePlugin);
 
   let imageReveal = CSSRulePlugin.getRule(".image-container::after");
 
