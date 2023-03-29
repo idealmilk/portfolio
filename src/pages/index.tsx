@@ -2,23 +2,26 @@ import type { PageProps } from "gatsby";
 import React, { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import styled from "styled-components";
 
-import Banner from "components/Banner";
+import {
+  Banner,
+  Experience,
+  Form,
+  Gallery,
+  Header,
+  Image,
+  Navigation,
+  Spinner,
+  Ticker,
+} from "components";
+import DisplayPic from "images/matt.webp";
+
 import {
   ImgWrap,
   InnerWrap,
   TextWrap,
 } from "components/common/Containers/styled";
-import Experience from "components/Experience";
-import Form from "components/Form";
-import Header from "components/Header";
-import Image from "components/Image";
-import Navigation from "components/Navigation";
-import Spinner from "components/Spinner";
-import Ticker from "components/Ticker";
-import DisplayPic from "images/matt.webp";
-import styled from "styled-components";
-import Gallery from "components/Gallery";
 
 const Content = styled.div`
   position: absolute;

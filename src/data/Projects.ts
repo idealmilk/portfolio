@@ -1,10 +1,17 @@
+import {
+  NewEdgeHome,
+  TheGlowHome,
+  SciLeadsHome,
+  SecondLifeHome,
+} from "images/projects";
+
 export const Projects = [
   {
     clientName: "NewEdge Studio",
     slug: "new-edge-studio",
     url: "https://newedgestud.io",
     background: "blue",
-    homeImage: "/projects/new-edge-home.webp",
+    homeImage: NewEdgeHome,
     desktopImages: [
       "/projects/new-edge-desktop-1.webp",
       "/projects/new-edge-desktop-2.webp",
@@ -27,7 +34,7 @@ export const Projects = [
     slug: "the-glow",
     url: "https://theglow.jp",
     background: "red",
-    homeImage: "/projects/the-glow-home.webp",
+    homeImage: TheGlowHome,
     desktopImages: [
       "/projects/the-glow-desktop-1.webp",
       "/projects/the-glow-desktop-2.webp",
@@ -48,7 +55,7 @@ export const Projects = [
     slug: "scileads",
     url: "https://scileads.com",
     background: "yellow",
-    homeImage: "/projects/scileads-home.webp",
+    homeImage: SciLeadsHome,
     desktopImages: [
       "/projects/scileads-desktop-1.webp",
       "/projects/scileads-desktop-2.webp",
@@ -70,7 +77,7 @@ export const Projects = [
     slug: "second-life",
     url: "https://secondlifefp.co.uk",
     background: "blue",
-    homeImage: "/projects/second-life-home.webp",
+    homeImage: SecondLifeHome,
     desktopImages: [
       "/projects/second-life-desktop-1.webp",
       "/projects/second-life-desktop-2.webp",
