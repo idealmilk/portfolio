@@ -107,6 +107,26 @@ const GlobalStyles = styled.createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
+  .image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: black;
+      top: 0;
+      right: 0;
+    }
+    img {
+      width: 1440px;
+      margin: 0 auto;
+    }
+  }
 `;
 
 GlobalStyles.defaultProps = {

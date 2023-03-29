@@ -17,12 +17,16 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+    h3 {
+      padding: 2rem 6rem 4rem;
+      font-size: 12rem;
+    }
     .ticker__element {
-      width: calc(100% + 120rem);
+      width: auto;
     }
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
+  /* @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
     .ticker__element {
       width: calc(100% + 145rem);
     }
@@ -45,5 +49,5 @@ export const Container = styled.div`
     .ticker__element {
       width: calc(100% + 50rem);
     }
-  }
+  } */
 `;

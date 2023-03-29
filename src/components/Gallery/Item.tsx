@@ -6,18 +6,18 @@ import "./styled";
 import { ItemContainer, ItemInfo, ItemWrap } from "./styled";
 
 type GalleryItemProps = {
-  src: string;
+  homeImage: string;
   category: string;
-  title: string;
+  clientName: string;
   background: string;
   updateActiveImage: Function;
   index: number;
 };
 
 const GalleryItem = ({
-  src,
+  homeImage,
   category,
-  title,
+  clientName,
   background,
   updateActiveImage,
   index,
@@ -40,15 +40,12 @@ const GalleryItem = ({
       <div />
       <ItemWrap background={background}>
         <ItemInfo>
-          <h3>{title}</h3>
+          <h3>{clientName}</h3>
           <p>{category}</p>
         </ItemInfo>
 
         <div className="item-image-wrap">
-          <div
-            className="item-image"
-            style={{ backgroundImage: `url(${src})` }}
-          ></div>
+          <img src={homeImage} />
         </div>
       </ItemWrap>
       <div />

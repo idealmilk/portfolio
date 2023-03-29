@@ -12,13 +12,13 @@ import {
 import Experience from "components/Experience";
 import Form from "components/Form";
 import Header from "components/Header";
+import Image from "components/Image";
 import Navigation from "components/Navigation";
 import Spinner from "components/Spinner";
 import Ticker from "components/Ticker";
 import DisplayPic from "images/matt.webp";
 import styled from "styled-components";
 import Gallery from "components/Gallery";
-import useLocoScroll from "hooks/useLocoScroll";
 
 const Content = styled.div`
   position: absolute;
@@ -51,10 +51,10 @@ const IndexPage: React.FC<PageProps> = () => {
       <Navigation />
       <Content>
         <div id="about" />
-        <Ticker text="A Fearless Introduction" />
+        <Ticker text="A fearless introduction" />
         <InnerWrap>
           <ImgWrap>
-            <img src={DisplayPic} alt="Matthew Gilligan" />
+            <Image image={DisplayPic} />
           </ImgWrap>
           <TextWrap
             as={motion.div}
@@ -80,11 +80,10 @@ const IndexPage: React.FC<PageProps> = () => {
           <Experience />
           <Spinner text="Blending functionality with aesthetics - " />
         </InnerWrap>
-
+        å
         <div id="work" />
         <Ticker text="Frontend Virtuosity" />
         <Gallery />
-
         <div id="contact" />
         <Ticker text="Inquiries and Invective" />
         <InnerWrap style={{ marginBottom: "20rem" }}>

@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Container = styled(motion.div)`
   width: 50%;
   margin-top: 6rem;
+  overflow: hidden;
 
   h3 {
     margin-bottom: 2rem;
@@ -12,19 +13,26 @@ export const Container = styled(motion.div)`
   table {
     width: 100%;
 
-    tr {
-      height: 6rem;
-      border-bottom: 1px solid white;
+    tbody {
+      width: 100%;
 
-      td {
-        font-size: 2rem;
+      tr {
+        height: 4rem;
+
+        td {
+          font-size: 2rem;
+        }
       }
     }
   }
 `;
 
-export const Divider = styled(motion.div)`
+export const TableDivider = styled.div`
   width: 100%;
-  height: 2px;
-  background: ${(props) => props.theme.colors.blue}:;
+`;
+
+export const Divider = styled(motion.div)`
+  height: 1px;
+  background: white;
+  width: 100%;
 `;

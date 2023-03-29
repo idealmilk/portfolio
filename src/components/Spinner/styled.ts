@@ -5,7 +5,7 @@ export const SpinnerWrap = styled.div`
   position: relative;
   width: 48%;
   height: auto;
-  margin-top: 16rem;
+  margin-top: 12rem;
 
   img,
   .circle-wrap {

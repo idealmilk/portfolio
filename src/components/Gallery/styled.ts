@@ -15,8 +15,6 @@ export const ItemContainer = styled.div`
       transform: scale(1);
       filter: none;
     }
-    .item-wrap {
-    }
   }
 `;
 
@@ -31,6 +29,7 @@ export const ItemWrap = styled.div<ItemWrapProps>`
   will-change: transform;
 
   .item-image-wrap {
+    display: flex;
     background: ${(props) => props.theme.colors[props.background]};
     width: 100%;
     height: 100%;
@@ -40,12 +39,10 @@ export const ItemWrap = styled.div<ItemWrapProps>`
     filter: grayscale(100%) sepia(20%) brightness(80%);
   }
 
-  .item-image {
-    background-size: cover;
-    background-position: center;
+  img {
     transform-origin: center;
     width: 100%;
-    height: 100%;
+    margin: auto 0;
     will-change: transform;
     transform: scale(0.7);
     transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
