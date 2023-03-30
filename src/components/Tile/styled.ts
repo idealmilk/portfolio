@@ -44,6 +44,21 @@ export const Container = styled(motion.div)<TileVariants>`
     -ms-transform: rotate(180deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    width: 100%;
+    height: calc(${(props) => props.height} / 3);
+    a {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      -moz-transform: rotate(0);
+      -webkit-transform: rotate(0);
+      -o-transform: rotate(0);
+      -ms-transform: rotate(0);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+    }
+  }
 `;
 
 export const HoverWrap = styled.div`

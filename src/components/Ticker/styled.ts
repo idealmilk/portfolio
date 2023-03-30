@@ -28,11 +28,11 @@ export const Container = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     h3 {
-      padding: 2rem 2rem 4rem;
+      padding: 3rem 2rem 4rem;
       font-size: 3rem;
     }
     .ticker__element {
-      width: auto;
+      width: calc(100% + 1rem);
     }
   }
 

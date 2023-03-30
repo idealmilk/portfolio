@@ -16,6 +16,12 @@ export const ItemContainer = styled.div`
       filter: none;
     }
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    height: 30vh;
+    margin: 20vh 0;
+    grid-template-columns: 10vw 1fr 10vw;
+  }
 `;
 
 type ItemWrapProps = {
@@ -63,20 +69,26 @@ export const ItemInfo = styled.div`
     -webkit-font-smoothing: antialiased;
   }
 
-  h4 {
-    position: relative;
-    line-height: 6vw;
-    color: transparent;
-    font-size: 6vw;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke: 2px #dbd8d6;
-  }
-
   p {
     position: relative;
-    line-height: 24px;
-    font-size: 24px;
+    line-height: 2.4rem;
+    font-size: 2.4rem;
     -webkit-font-smoothing: antialiased;
     margin-top: 2vh;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    transform: translate(0, 10rem);
+
+    h3 {
+      font-size: 5vw;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      margin-top: 1vh;
+    }
   }
 `;
