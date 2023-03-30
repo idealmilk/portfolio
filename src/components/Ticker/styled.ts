@@ -26,6 +26,16 @@ export const Container = styled.div`
     }
   }
 
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    h3 {
+      padding: 2rem 2rem 4rem;
+      font-size: 3rem;
+    }
+    .ticker__element {
+      width: auto;
+    }
+  }
+
   /* @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
     .ticker__element {
       width: calc(100% + 145rem);

@@ -4,6 +4,11 @@ export const Container = styled.form`
   min-height: 160px;
   width: 40%;
   text-align: center;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    margin-top: 4rem;
+    width: 100%;
+  }
 `;
 
 export const FormWrap = styled.div`

@@ -18,11 +18,15 @@ export const Container = styled(motion.div)`
 
       tr {
         height: 4rem;
-
-        td {
-          font-size: 2rem;
-        }
       }
+    }
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    width: 100%;
+
+    td {
+      font-size: 1.4rem;
     }
   }
 `;

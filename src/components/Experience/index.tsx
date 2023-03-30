@@ -27,7 +27,7 @@ const Experience = () => {
           </tr>
 
           <tr className="table-row" ref={firstRowRef}>
-            <td>New Edge Studio</td>
+            <td>New Edge</td>
             <td>Freelance Developer</td>
             <td>2022-</td>
           </tr>

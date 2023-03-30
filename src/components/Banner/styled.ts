@@ -6,10 +6,15 @@ export const Container = styled(motion.div)`
   position: fixed;
   top: 10rem;
   left: 9.7rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+    top: 4rem;
+    left: 6.4rem;
+  }
 `;
 
 export const BannerRow = styled.div`
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: visible;
   display: flex;
   @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
     &:first-child {
@@ -39,9 +44,6 @@ export const RowCol = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
-  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
-    width: 70%;
-  }
   @media (max-width: 1240px) {
     &:last-child {
       display: none;

@@ -7,7 +7,6 @@ export const SpinnerWrap = styled.div`
   height: auto;
   margin-top: 12rem;
 
-  img,
   .circle-wrap {
     position: absolute;
     top: 50%;
@@ -24,20 +23,15 @@ export const SpinnerWrap = styled.div`
     }
   }
 
-  img {
-    width: 16rem;
-  }
-
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    img {
-      width: 8rem;
-    }
+    width: 100%;
+    padding-bottom: 2rem;
 
     .circle {
-      height: 12.6rem !important;
-      width: 12.6rem !important;
+      height: 22.1rem !important;
+      width: 22.1rem !important;
       span {
-        font-size: 1.1rem;
+        font-size: 1.8rem;
         transform-origin: center 6em 0px !important;
       }
     }

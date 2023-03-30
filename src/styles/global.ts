@@ -60,8 +60,18 @@ const GlobalStyles = styled.createGlobalStyle`
     font-size: 2rem;
   }
 
-  p {
-    font-size: 1.6rem;
+  p,
+  td {
+    font-size: 2.8rem;
+    line-height: 1.8;
+
+    @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+      font-size: 2.2rem;
+    }
+
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+      font-size: 1.8rem;
+    }
   }
 
   blockquote,
