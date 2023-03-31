@@ -5,13 +5,14 @@ import { TileVariants } from ".";
 
 export const Container = styled(motion.div)<TileVariants>`
   position: relative;
+  display: inline-block;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   background: ${(props) => props.theme.colors[props.background]};
   color: ${(props) => props.text};
 
   .bottom-hover {
-    transform: translateY(5rem);
+    transform: translateY(6rem);
   }
 
   .ticker-hover {
@@ -89,5 +90,9 @@ export const Row = styled.div`
 
   .bottom {
     transform: translateY(0);
+  }
+
+  p {
+    font-size: 1.6rem;
   }
 `;

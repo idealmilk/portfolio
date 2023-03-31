@@ -10,6 +10,7 @@ export type TileVariants = {
   text: string;
   height: string;
   width: string;
+  onMouseEnter?: () => void;
 };
 
 type TileProps = {

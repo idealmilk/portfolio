@@ -17,6 +17,7 @@ const GlobalStyles = styled.createGlobalStyle`
     box-sizing: border-box;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none;
+    cursor: none;
   }
 
   html::-webkit-scrollbar {
@@ -72,6 +73,10 @@ const GlobalStyles = styled.createGlobalStyle`
     @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 1.8rem;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   blockquote,
@@ -138,6 +143,25 @@ const GlobalStyles = styled.createGlobalStyle`
       object-fit: cover;
       margin: 0 auto;
     }
+  }
+
+  .cursor {
+    position: fixed;
+    z-index: 1000000;
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    background-color: #1e91d6;
+    border-radius: 200px;
+    pointer-events: none;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
   }
 `;
 

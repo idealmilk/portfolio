@@ -40,7 +40,6 @@ export const HeaderInner = styled.div`
     position: relative;
     margin: 0 40px;
     font-size: 2rem;
-    text-decoration: none;
     color: ${(props) => props.theme.colors.black};
     white-space: nowrap;
 

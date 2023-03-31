@@ -1,12 +1,17 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { MouseEventHandler, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { InnerWrap, ImgWrap, TextWrap } from "components/common/Wraps/styled";
 import { Experience, Image, Spinner, Ticker } from "components";
 import DisplayPic from "images/matt.webp";
 
-const AboutContainer = () => {
+type AboutProps = {
+  faceEnter: MouseEventHandler;
+  faceLeave: MouseEventHandler;
+};
+
+const AboutContainer = ({ faceEnter, faceLeave }: AboutProps) => {
   const controls = useAnimation();
   const [aboutTextRef, inView] = useInView();
 
@@ -26,6 +31,18 @@ const AboutContainer = () => {
       <Ticker text="A fearless introduction" />
       <InnerWrap>
         <ImgWrap>
+          <div
+            onMouseEnter={faceEnter}
+            onMouseLeave={faceLeave}
+            style={{
+              position: "absolute",
+              height: "140px",
+              width: "120px",
+              zIndex: 100,
+              top: "88px",
+              left: "160px",
+            }}
+          />
           <Image image={DisplayPic} />
         </ImgWrap>
         <TextWrap

@@ -1,4 +1,5 @@
 export { default as Banner } from "./Banner";
+export { default as Cursor } from "./Cursor";
 export { default as Experience } from "./Experience";
 export { default as Form } from "./Form";
 export { default as Gallery } from "./Gallery";
