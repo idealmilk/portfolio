@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-
-import { Container, HamburgerMenu, HeaderInner, Logo, Nav } from "./styled";
 import { Link } from "gatsby";
 
-const Header = () => {
+import { LanguageContext } from "context/LanguageContext";
+
+import { Container, HamburgerMenu, HeaderInner, Logo, Nav } from "./styled";
+
+type HeaderProps = {
+  setShowWhiteout: any;
+};
+
+const Header = ({ setShowWhiteout }: HeaderProps) => {
+  const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+
+  const handleLanguageToggle = () => {
+    const whiteout = document.getElementById("whiteout");
+    if (whiteout) {
+      whiteout.style.display = "block";
+    }
+
+    setShowWhiteout(true);
+
+    setTimeout(() => {
+      toggleLanguage();
+      window.location.reload();
+    }, 2000);
+  };
+
   return (
     <Container
       as={motion.section}
@@ -19,12 +41,17 @@ const Header = () => {
     >
       <HeaderInner>
         <Logo>
-          <Link to="/">Matthew Gilligan</Link>
+          <Link to="/">
+            {isEnglish ? "Matthew Gilligan" : "ギリガンマシュー"}
+          </Link>
         </Logo>
         <Nav>
-          <AnchorLink to="#about" title="About" />
-          <AnchorLink to="#work" title="Work" />
-          <AnchorLink to="#contact" title="Contact" />
+          <AnchorLink to="#about" title={isEnglish ? "About" : "自己紹介"} />
+          {/* <AnchorLink to="#work" title="Work" /> */}
+          <AnchorLink to="#contact" title={isEnglish ? "Contact" : "連絡"} />
+          <button onClick={handleLanguageToggle}>
+            {isEnglish ? "JP" : "EN"}
+          </button>
         </Nav>
 
         <HamburgerMenu>

@@ -4,8 +4,9 @@ import styled from "styled-components";
 import useMouse from "@react-hook/mouse-position";
 import { motion, useTransform } from "framer-motion";
 
-import { Banner, Cursor, Header, Navigation } from "components";
-import { About, Contact, Work } from "components/sections";
+import { Banner, Header, Navigation } from "components";
+import { About, Contact, Work } from "sections";
+import Whiteout from "components/Whiteout";
 
 const Content = styled.div`
   position: absolute;
@@ -17,6 +18,7 @@ const Content = styled.div`
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
+  const [isEnglish, setIsEnglish] = useState(true);
   const [defaultCursorColor, setIsDefaultCursorColor] = useState("black");
 
   const [cursorText, setCursorText] = useState("");
@@ -24,7 +26,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const [projectColor, setProjectColor] = useState("");
   const [projectTextColor, setProjectTextColor] = useState("");
 
-  console.log(cursorVariant);
+  const [showWhiteout, setShowWhiteout] = useState(false);
 
   const ref = useRef(null);
   const mouse = useMouse(ref, {
@@ -69,8 +71,8 @@ const IndexPage: React.FC<PageProps> = () => {
       textAlign: "center",
       justifyContent: "center",
       paddingTop: "14px",
-      x: mouseXPosition - 32,
-      y: mouseYPosition - 32,
+      x: mouseXPosition ? mouseXPosition - 32 : 0,
+      y: mouseYPosition ? mouseYPosition - 32 : 0,
     },
     contact: {
       opacity: 1,
@@ -79,8 +81,8 @@ const IndexPage: React.FC<PageProps> = () => {
       height: 120,
       width: 120,
       fontSize: "120px",
-      x: mouseXPosition - 48,
-      y: mouseYPosition - 48,
+      x: mouseXPosition ? mouseXPosition - 48 : 0,
+      y: mouseYPosition ? mouseYPosition - 48 : 0,
     },
   };
 
@@ -112,6 +114,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <main ref={ref}>
+      <Whiteout showWhiteout={showWhiteout} />
       <motion.div
         variants={variants}
         className="cursor"
@@ -120,8 +123,7 @@ const IndexPage: React.FC<PageProps> = () => {
       >
         {cursorText}
       </motion.div>
-      <Header />
-      {/* <Cursor isOverContent={isOverContent} /> */}
+      <Header setShowWhiteout={setShowWhiteout} />
       <Banner />
       <Navigation
         projectEnter={projectEnter}

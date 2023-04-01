@@ -8,8 +8,8 @@ export const Container = styled(motion.div)<TileVariants>`
   display: inline-block;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  background: ${(props) => props.theme.colors[props.background]};
-  color: ${(props) => props.text};
+  background: ${(props) => props.theme.colors[props.backgroundColor]};
+  color: ${(props) => props.textColor};
 
   .bottom-hover {
     transform: translateY(6rem);
@@ -38,7 +38,7 @@ export const Container = styled(motion.div)<TileVariants>`
     overflow: hidden;
     width: 100%;
     height: 100%;
-    color: ${(props) => props.text};
+    color: ${(props) => props.textColor};
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -o-transform: rotate(180deg);
@@ -78,7 +78,7 @@ export const HoverWrap = styled.div`
   p {
     font-size: 16rem;
     margin-right: 6rem;
-    transform: translateY(-3rem);
+    transform: translateY(-5.5rem);
   }
 `;
 

@@ -6,19 +6,23 @@ import Ticker from "react-ticker";
 import { Container, HoverWrap, Row } from "./styled";
 
 export type TileVariants = {
-  background: string;
-  text: string;
+  backgroundColor: string;
+  textColor: string;
   height: string;
   width: string;
   onMouseEnter?: () => void;
 };
 
 type TileProps = {
+  url: string;
   text: string;
+  index: string;
+  role: string;
+  year: string;
   variants: TileVariants;
 };
 
-const Tile = ({ text, variants }: TileProps) => {
+const Tile = ({ text, url, index, role, year, variants }: TileProps) => {
   const container = useRef<HTMLDivElement>(null);
   const hoverWrap = useRef<HTMLDivElement>(null);
   const bottomRow = useRef<HTMLDivElement>(null);
@@ -52,8 +56,8 @@ const Tile = ({ text, variants }: TileProps) => {
       onMouseEnter={() => mouseEnter()}
       onMouseLeave={() => mouseLeave()}
       onClick={() => handleExit()}
-      background={variants.background}
-      text={variants.text}
+      backgroundColor={variants.backgroundColor}
+      textColor={variants.textColor}
       height={variants.height}
       width={variants.width}
       initial={{ opacity: 0, y: -500 }}
@@ -67,21 +71,21 @@ const Tile = ({ text, variants }: TileProps) => {
         duration: 1,
       }}
     >
-      <Link to="/about">
+      <a href={url} target="_blank" rel="noopener noreferrer">
         <Row>
-          <p>Development</p>
-          <p>2023</p>
+          <p>{role}</p>
+          <p>{year}</p>
         </Row>
         <Row className="bottom" ref={bottomRow}>
           <p>{text}</p>
-          <p>01</p>
+          <p>{index}</p>
         </Row>
         <HoverWrap ref={hoverWrap}>
           <Ticker speed={10} move={isShown}>
             {() => <p>{text}</p>}
           </Ticker>
         </HoverWrap>
-      </Link>
+      </a>
     </Container>
   );
 };

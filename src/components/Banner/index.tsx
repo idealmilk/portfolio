@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Container, BannerRow, RowCol, RowTitle, RowLetter } from "./styled";
+import React, { useContext } from "react";
+
+import { LanguageContext } from "context/LanguageContext";
+
+import { BannerRow, Container, RowCol, RowLetter, RowTitle } from "./styled";
 
 const banner = {
   animate: {
@@ -43,11 +46,13 @@ const AnimatedLetters = ({ title, disabled }: AnimatedLettersProps) => (
 );
 
 const Banner = () => {
+  const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+
   return (
     <Container as={motion.div} variants={banner}>
       <BannerRow>
         <RowCol>
-          <AnimatedLetters title="Frontend" />
+          <AnimatedLetters title={isEnglish ? "Frontend" : "フロントエンド"} />
         </RowCol>
         {/* <RowCol
           as={motion.div}
@@ -67,7 +72,7 @@ const Banner = () => {
       </BannerRow>
       <BannerRow style={{ marginTop: "-7rem" }}>
         <RowCol>
-          <AnimatedLetters title="Engineer" />
+          <AnimatedLetters title={isEnglish ? "Engineer" : "エンジニア"} />
         </RowCol>
       </BannerRow>
     </Container>

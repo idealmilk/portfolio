@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 
 import { defaultTheme } from "styles/theme";
 import GlobalStyles from "styles/global";
+import { LanguageProvider } from "context/LanguageContext";
 
 export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
   element,
@@ -16,9 +17,11 @@ export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
   element,
 }) => {
   return (
-    <AnimatePresence mode="wait">
-      <GlobalStyles />
-      {element}
-    </AnimatePresence>
+    <LanguageProvider>
+      <AnimatePresence mode="wait">
+        <GlobalStyles />
+        {element}
+      </AnimatePresence>
+    </LanguageProvider>
   );
 };

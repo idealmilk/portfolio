@@ -35,10 +35,12 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-root-import",
       options: {
         components: path.join(__dirname, "src/components"),
+        context: path.join(__dirname, "src/context"),
         data: path.join(__dirname, "src/data"),
         hooks: path.join(__dirname, "src/hooks"),
         images: path.join(__dirname, "src/images"),
         pages: path.join(__dirname, "src/pages"),
+        sections: path.join(__dirname, "src/sections"),
         styles: path.join(__dirname, "src/styles"),
       },
     },
