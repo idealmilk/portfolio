@@ -24,8 +24,8 @@ const Header = ({ setShowWhiteout }: HeaderProps) => {
 
     setTimeout(() => {
       toggleLanguage();
-      window.location.reload();
-    }, 2000);
+      location.reload();
+    }, 1000);
   };
 
   return (
