@@ -1,8 +1,9 @@
-import React, { MouseEventHandler } from "react";
+import React, { MouseEventHandler, useContext } from "react";
 import { Link } from "gatsby";
 
 import { Container, TileWrap } from "./styled";
 import Tile from "components/Tile";
+import { LanguageContext } from "context/LanguageContext";
 
 type NavigationProps = {
   projectEnter: MouseEventHandler;
@@ -17,6 +18,8 @@ const Navigation = ({
   setProjectColor,
   setProjectTextColor,
 }: NavigationProps) => {
+  const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+
   return (
     <Container>
       <TileWrap>
@@ -33,7 +36,7 @@ const Navigation = ({
             text="SciLeads"
             url="https://scileads.com/"
             index="03"
-            role="Development"
+            role={isEnglish ? "Development" : "デベロップメント"}
             year="2021"
             variants={{
               backgroundColor: "yellow",
@@ -56,7 +59,11 @@ const Navigation = ({
             text="The Glow"
             url="https://www.theglow.jp/"
             index="02"
-            role="Branding, Design, Development"
+            role={
+              isEnglish
+                ? "Branding, Design, Development"
+                : "ブランディング、デザイン、デベロップメント"
+            }
             year="2022"
             variants={{
               backgroundColor: "red",
@@ -79,7 +86,9 @@ const Navigation = ({
             text="New Edge Studio"
             url="https://newedgestud.io/"
             index="01"
-            role="Design, Development"
+            role={
+              isEnglish ? "Design, Development" : "デザイン、デベロップメント"
+            }
             year="2023"
             variants={{
               backgroundColor: "blue",
