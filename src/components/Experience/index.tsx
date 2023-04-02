@@ -1,5 +1,6 @@
+import { LanguageContext } from "context/LanguageContext";
 import { useInView } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 
 import { Container, Divider, TableDivider } from "./styled";
 
@@ -15,20 +16,25 @@ const rows = [
 const Experience = () => {
   const firstRowRef = useRef(null);
   const secondRowRef = useRef(null);
+
   const isInView = useInView(firstRowRef, { once: true });
   const isInViewTwo = useInView(secondRowRef, { once: true });
+
+  const { isEnglish, toggleLanguage } = useContext(LanguageContext);
 
   return (
     <Container>
       <table>
         <tbody>
           <tr style={{ height: "8rem" }}>
-            <td>Experience</td>
+            <td>{isEnglish ? "Experience" : "経験"}</td>
           </tr>
 
           <tr className="table-row" ref={firstRowRef}>
             <td>New Edge</td>
-            <td>Freelance Developer</td>
+            <td>
+              {isEnglish ? "Freelance Developer" : "フリーランスデベロッパー"}
+            </td>
             <td>2022-</td>
           </tr>
           <tr>
@@ -48,7 +54,9 @@ const Experience = () => {
           </tr>
           <tr className="table-row" ref={secondRowRef}>
             <td>SciLeads</td>
-            <td>Software Engineer</td>
+            <td>
+              {isEnglish ? "Software Engineer" : "ソフトウェアエンジニア"}
+            </td>
             <td>2020-2022</td>
           </tr>
           <tr>

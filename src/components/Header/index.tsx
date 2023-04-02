@@ -52,13 +52,14 @@ const Header = ({ setShowWhiteout }: HeaderProps) => {
           {/* <AnchorLink to="#work" title="Work" /> */}
           <AnchorLink to="#contact" title={isEnglish ? "Contact" : "連絡"} />
           <button onClick={handleLanguageToggle}>
-            {isEnglish ? "JP" : "EN"}
+            {isEnglish ? "日本語" : "EN"}
           </button>
         </Nav>
 
         <HamburgerMenu>
-          <span></span>
-          <span></span>
+          <button onClick={handleLanguageToggle}>
+            {isEnglish ? "日本語" : "EN"}
+          </button>
         </HamburgerMenu>
       </HeaderInner>
     </Container>

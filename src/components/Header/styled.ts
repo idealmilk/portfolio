@@ -36,7 +36,8 @@ export const HeaderInner = styled.div`
     }
   }
 
-  a {
+  a,
+  button {
     position: relative;
     margin: 0 40px;
     font-size: 2rem;
@@ -74,7 +75,10 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: center;
 
-  a:last-of-type {
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
     margin-right: 0;
   }
 
@@ -93,15 +97,11 @@ export const HamburgerMenu = styled.div`
   flex-direction: column;
   transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   cursor: pointer;
-  &:hover {
-    background: darken($color: white, $amount: 12);
-  }
-  span {
-    width: 20px;
-    height: 3px;
-    margin: 2px 0;
-    background: ${(props) => props.theme.colors.black};
-    display: block;
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 0;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {

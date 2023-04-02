@@ -54,10 +54,10 @@ const IndexPage: React.FC<PageProps> = () => {
       backgroundColor: defaultCursorColor,
       x: mouseXPosition,
       y: mouseYPosition,
-      transition: {
-        type: "spring",
-        mass: 0.6,
-      },
+      // transition: {
+      //   type: "spring",
+      //   mass: 0.6,
+      // },
     },
     project: {
       opacity: 1,
