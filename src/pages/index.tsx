@@ -2,7 +2,7 @@ import type { PageProps } from "gatsby";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import useMouse from "@react-hook/mouse-position";
-import { motion, useTransform } from "framer-motion";
+import { motion, useTransform, Variants } from "framer-motion";
 import { ArrowUpRight } from "react-feather";
 
 import { Banner, Footer, Header, Navigation } from "components";
@@ -46,7 +46,7 @@ const IndexPage: React.FC<PageProps> = () => {
     mouseYPosition = mouse.clientY;
   }
 
-  const variants = {
+  const variants: Variants = {
     default: {
       opacity: 1,
       height: 10,
@@ -115,23 +115,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <main ref={ref}>
-      <Whiteout showWhiteout={showWhiteout} />
-      <motion.div
-        variants={variants}
-        className="cursor"
-        animate={cursorVariant}
-        transition={spring}
-      >
-        {cursorText}
-      </motion.div>
-      <Header showWhiteout={showWhiteout} setShowWhiteout={setShowWhiteout} />
-      <Banner />
-      <Navigation
-        projectEnter={projectEnter}
-        projectLeave={projectLeave}
-        setProjectColor={setProjectColor}
-        setProjectTextColor={setProjectTextColor}
-      />
       <Content
         onMouseEnter={() => setIsDefaultCursorColor("white")}
         onMouseLeave={() => setIsDefaultCursorColor("black")}

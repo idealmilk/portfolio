@@ -3,8 +3,9 @@ import { GatsbyBrowser } from "gatsby";
 import { ThemeProvider } from "styled-components";
 import { AnimatePresence } from "framer-motion";
 
-import { defaultTheme } from "styles/theme";
-import GlobalStyles from "styles/global";
+import { defaultTheme } from "./src/styles/theme";
+import GlobalStyles from "./src/styles/global";
+import { LanguageProvider } from "./src/context/LanguageContext";
 
 export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
   element,
@@ -16,9 +17,13 @@ export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
   element,
 }) => {
   return (
-    <AnimatePresence mode="wait">
-      <GlobalStyles />
-      {element}
-    </AnimatePresence>
+    <>
+      <LanguageProvider>
+        <AnimatePresence mode="wait">
+          <GlobalStyles />
+          {element}
+        </AnimatePresence>
+      </LanguageProvider>
+    </>
   );
 };

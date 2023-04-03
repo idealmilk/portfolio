@@ -8,6 +8,9 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   graphqlTypegen: true,
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     "gatsby-plugin-anchor-links",
     "gatsby-plugin-styled-components",
