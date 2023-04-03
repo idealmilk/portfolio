@@ -27,7 +27,7 @@ const Experience = () => {
       <table>
         <tbody>
           <tr style={{ height: "8rem" }}>
-            <td>{isEnglish ? "Experience" : "経験"}</td>
+            <td>{isEnglish ? "Experience" : "経歴"}</td>
           </tr>
 
           <tr className="table-row" ref={firstRowRef}>

@@ -30,7 +30,7 @@ const AboutContainer = ({ faceEnter, faceLeave }: AboutProps) => {
 
   return (
     <section id="about">
-      <Ticker text={isEnglish ? "A fearless introduction" : "自己紹介"} />
+      <Ticker text={isEnglish ? "A fearless introduction" : "プロフィール"} />
       <InnerWrap>
         <ImgWrap>
           <div
@@ -56,25 +56,19 @@ const AboutContainer = ({ faceEnter, faceLeave }: AboutProps) => {
         >
           <p>
             {isEnglish
-              ? "Matthew's hands dance over the keyboard as he works to bring his vision to life. With each line of code, he brings the design to the forefront, seamlessly blending functionality with aesthetics."
-              : "マシューの手はキーボードの上で踊りながら、自分の作品を世に送り出すために働いている。 ビジョンに命を吹き込む。コードの一行一行で、彼はデザインを実現します。 機能性と美しさをシームレスに融合させた最前線。"}
+              ? "Prior to moving to Japan, Matthew worked as a Software Engineer for a data marketing company, before eventually moving on to freelancing as a Web Developer with London based digital agency, New Edge Studio."
+              : "イギリスにてデータマーケティング会社のソフトウェアエンジニアとして働き、退職後デザイン事務所 New Edge Studioにてウェブデベロッパーとしてフリーランス所属。"}
           </p>
           <p>
             {isEnglish
               ? "His passion for design is evident in every aspect of his work. As he crafts the frontend experience, he carefully considers each element, seeking to create a cohesive whole that is both visually stunning and intuitively usable."
-              : "彼のデザインに対する情熱は、仕事のあらゆる側面に表れています。フロントエンドエクスペリエンスを構築する際には、各要素を慎重に検討し、視覚的に美しく、直感的に使用できるまとまりのある全体を作り上げることを追求しています。"}
+              : "フロントエンドエクスペリエンスを構築する際には、各要素を慎重に検討し、視覚的に美しく、直感的に使用でき、まとまりのある全体感を作り上げることを追求しています。"}
           </p>
         </TextWrap>
       </InnerWrap>
       <InnerWrap style={{ marginBottom: "20rem" }}>
         <Experience />
-        <Spinner
-          text={
-            isEnglish
-              ? "Blending functionality with aesthetics - "
-              : "機能性と審美性の融合 - "
-          }
-        />
+        <Spinner text="Blending functionality with aesthetics - " />
       </InnerWrap>
     </section>
   );

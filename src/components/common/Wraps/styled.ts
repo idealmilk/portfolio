@@ -8,7 +8,7 @@ export const InnerWrap = styled.div`
   max-width: 86%;
   margin: 0 auto;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     display: block;
   }
 `;
@@ -25,7 +25,7 @@ export const TextWrap = styled(motion.div)`
     width: 45%;
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     width: 100%;
   }
 `;
@@ -35,7 +35,7 @@ export const ImgWrap = styled.div`
   width: 35%;
   text-align: center;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     width: 100%;
     margin-bottom: 3rem;
   }

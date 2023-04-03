@@ -5,7 +5,7 @@ import useMouse from "@react-hook/mouse-position";
 import { motion, useTransform } from "framer-motion";
 import { ArrowUpRight } from "react-feather";
 
-import { Banner, Header, Navigation } from "components";
+import { Banner, Footer, Header, Navigation } from "components";
 import { About, Contact, Work } from "sections";
 import Whiteout from "components/Whiteout";
 
@@ -139,6 +139,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <About faceEnter={faceEnter} faceLeave={faceLeave} />
         {/* <Work /> */}
         <Contact />
+        <Footer />
       </Content>
     </main>
   );

@@ -62,7 +62,7 @@ const Navigation = ({
             role={
               isEnglish
                 ? "Branding, Design, Development"
-                : "ブランディング、デザイン、デベロップメント"
+                : "ブランディング / デザイン / デベロップメント"
             }
             year="2022"
             variants={{
@@ -87,7 +87,7 @@ const Navigation = ({
             url="https://newedgestud.io/"
             index="01"
             role={
-              isEnglish ? "Design, Development" : "デザイン、デベロップメント"
+              isEnglish ? "Design, Development" : "デザイン / デベロップメント"
             }
             year="2023"
             variants={{

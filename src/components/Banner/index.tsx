@@ -67,10 +67,17 @@ const Banner = () => {
           <AnimatedLetters title={isEnglish ? "Engineer" : "エンジニア"} />
         </BannerRow>
       </RowCol>
-      <RowCol>
-        <BannerRow>
-          <span className="row-message">Selected Works</span>
-        </BannerRow>
+      <RowCol
+        as={motion.div}
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          ease: "easeInOut",
+          duration: 1,
+          delay: 1.4,
+        }}
+      >
+        <p>{isEnglish ? "Selected Works" : "作例"}</p>
       </RowCol>
     </Container>
   );

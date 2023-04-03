@@ -24,7 +24,7 @@ const ContactContainer = () => {
 
   return (
     <section id="contact">
-      <Ticker text={isEnglish ? "Inquiries and Invective" : "連絡"} />
+      <Ticker text={isEnglish ? "Inquiries and Invective" : "コンタクト"} />
       <InnerWrap style={{ marginBottom: "20rem" }}>
         <TextWrap
           as={motion.div}
@@ -35,8 +35,8 @@ const ContactContainer = () => {
         >
           <p>
             {isEnglish
-              ? "At present, I am endeavoring to secure gainful employment in the bustling metropolis of Tokyo. However, until such a time as a suitable position presents itself, I remain open to the prospect of engaging in freelance endeavors. Should you possess an interest in collaborating on forthcoming projects or engaging in a colloquy of sorts, I implore you to extend an invitation to yours truly."
-              : "現在、私は東京の活気ある大都市で有為な雇用を確保するために努力しています。しかし、適当なポジションが見つかるまでは、フリーランスとして活動することも可能である。もし、あなたが今後のプロジェクトで協力したり、ある種の談話をすることに興味をお持ちでしたら、ぜひ、私までお誘いください。"}
+              ? "Should you possess an interest in collaborating on forthcoming projects or engaging in a colloquy of sorts, I implore you to extend an invitation to yours truly."
+              : "案件のご相談はコンタクトよりお気軽にご連絡下さい。"}
           </p>
         </TextWrap>
         <Form />

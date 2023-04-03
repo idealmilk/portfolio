@@ -11,12 +11,18 @@ export const Container = styled(motion.div)`
   justify-content: space-between;
   width: 100vw;
   padding: 0 10.8rem 0 9.7rem;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: block;
+    padding: 0 2rem;
+  }
 `;
 
 export const BannerRow = styled.div`
   overflow-y: hidden;
   overflow-x: visible;
   display: flex;
+
   @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
     &:first-child {
       margin-top: 48px;
@@ -36,8 +42,8 @@ export const RowLetter = styled(motion.span)`
   letter-spacing: -0.8rem;
   display: inline-block;
   white-space: nowrap;
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    font-size: 13rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    font-size: 8rem;
   }
 `;
 
@@ -45,11 +51,10 @@ export const RowCol = styled.div`
   align-content: center;
   justify-content: center;
 
-  @media (max-width: 1240px) {
-    &:last-child {
-      display: none;
-    }
+  p {
+    transform: translate(0, 280px);
   }
+
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     width: 100%;
     justify-content: flex-start;

@@ -44,13 +44,19 @@ const Header = ({ setShowWhiteout }: HeaderProps) => {
       <HeaderInner>
         <Logo>
           <Link to="/">
-            {isEnglish ? "Matthew Gilligan" : "ギリガンマシュー"}
+            {isEnglish ? "Matthew Gilligan" : "ギリガン マシュー"}
           </Link>
         </Logo>
         <Nav>
-          <AnchorLink to="#about" title={isEnglish ? "About" : "自己紹介"} />
+          <AnchorLink
+            to="#about"
+            title={isEnglish ? "About" : "プロフィール"}
+          />
           {/* <AnchorLink to="#work" title="Work" /> */}
-          <AnchorLink to="#contact" title={isEnglish ? "Contact" : "連絡"} />
+          <AnchorLink
+            to="#contact"
+            title={isEnglish ? "Contact" : "コンタクト"}
+          />
           <button onClick={handleLanguageToggle}>
             {isEnglish ? "日本語" : "EN"}
           </button>

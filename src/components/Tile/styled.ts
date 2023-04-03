@@ -46,9 +46,10 @@ export const Container = styled(motion.div)<TileVariants>`
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     width: 100%;
-    height: calc(${(props) => props.height} / 3);
+    height: 18vh;
+
     a {
       position: absolute;
       bottom: 0;

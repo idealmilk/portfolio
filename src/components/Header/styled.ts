@@ -17,7 +17,10 @@ export const Container = styled(motion.div)`
     font-size: 1.6rem;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    padding: 0 1.2rem;
+    width: 96%;
+    margin: 0 auto;
+    padding: 0;
+    height: 8rem;
     font-size: 1.2rem;
   }
 `;
