@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import useMouse from "@react-hook/mouse-position";
 import { motion, useTransform } from "framer-motion";
+import { ArrowUpRight } from "react-feather";
 
 import { Banner, Header, Navigation } from "components";
 import { About, Contact, Work } from "sections";
@@ -21,7 +22,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const [isEnglish, setIsEnglish] = useState(true);
   const [defaultCursorColor, setIsDefaultCursorColor] = useState("black");
 
-  const [cursorText, setCursorText] = useState("");
+  const [cursorText, setCursorText] = useState<string | JSX.Element>("");
   const [cursorVariant, setCursorVariant] = useState("default");
   const [projectColor, setProjectColor] = useState("");
   const [projectTextColor, setProjectTextColor] = useState("");
@@ -93,7 +94,7 @@ const IndexPage: React.FC<PageProps> = () => {
   };
 
   const projectEnter = () => {
-    setCursorText("↗");
+    setCursorText(<ArrowUpRight size={48} />);
     setCursorVariant("project");
   };
 

@@ -69,7 +69,7 @@ const Navigation = ({
               backgroundColor: "red",
               textColor: "white",
               height: "35vh",
-              width: "45vw",
+              width: "40vw",
             }}
           />
         </div>
@@ -94,7 +94,7 @@ const Navigation = ({
               backgroundColor: "blue",
               textColor: "white",
               height: "50vh",
-              width: "25.4vw",
+              width: "25vw",
             }}
           />
         </div>

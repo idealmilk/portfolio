@@ -50,11 +50,8 @@ const Banner = () => {
 
   return (
     <Container as={motion.div} variants={banner}>
-      <BannerRow>
-        <RowCol>
-          <AnimatedLetters title={isEnglish ? "Frontend" : "フロントエンド"} />
-        </RowCol>
-        {/* <RowCol
+      <RowCol>
+        <BannerRow
           as={motion.div}
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,17 +61,17 @@ const Banner = () => {
             delay: 0.4,
           }}
         >
-          <span className="row-message">
-            We are specialised in setting up the foundation of your brand and
-            setting you up for success.
-          </span>
-        </RowCol> */}
-      </BannerRow>
-      <BannerRow style={{ marginTop: "-7rem" }}>
-        <RowCol>
+          <AnimatedLetters title={isEnglish ? "Frontend" : "フロントエンド"} />
+        </BannerRow>
+        <BannerRow style={{ marginTop: "-7rem" }}>
           <AnimatedLetters title={isEnglish ? "Engineer" : "エンジニア"} />
-        </RowCol>
-      </BannerRow>
+        </BannerRow>
+      </RowCol>
+      <RowCol>
+        <BannerRow>
+          <span className="row-message">Selected Works</span>
+        </BannerRow>
+      </RowCol>
     </Container>
   );
 };

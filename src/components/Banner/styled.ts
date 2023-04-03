@@ -5,11 +5,12 @@ export const Container = styled(motion.div)`
   z-index: 100;
   position: fixed;
   top: 10rem;
-  left: 9.7rem;
-  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
-    top: 4rem;
-    left: 6.4rem;
-  }
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 0 10.8rem 0 9.7rem;
 `;
 
 export const BannerRow = styled.div`
@@ -41,9 +42,9 @@ export const RowLetter = styled(motion.span)`
 `;
 
 export const RowCol = styled.div`
-  display: flex;
   align-content: center;
   justify-content: center;
+
   @media (max-width: 1240px) {
     &:last-child {
       display: none;
