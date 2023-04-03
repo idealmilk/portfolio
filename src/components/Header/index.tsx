@@ -28,9 +28,9 @@ const Header = ({ showWhiteout, setShowWhiteout }: HeaderProps) => {
     if (showWhiteout) {
       setTimeout(() => {
         toggleLanguage();
-        // if (typeof window !== "undefined") {
-        //   window.location.reload();
-        // }
+        if (typeof window !== 'undefined') {
+          window.location.reload();
+        }
       }, 1000);
     }
   }, [showWhiteout, toggleLanguage]);

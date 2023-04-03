@@ -1,17 +1,8 @@
-import { LanguageContext } from "context/LanguageContext";
-import { useInView } from "framer-motion";
-import React, { useContext, useRef } from "react";
+import { LanguageContext } from 'context/LanguageContext';
+import { useInView } from 'framer-motion';
+import React, { useContext, useRef } from 'react';
 
-import { Container, Divider, TableDivider } from "./styled";
-
-const rows = [
-  {
-    company: "New Edge Studio",
-    title: "Freelance Developer",
-    date: "2022 - ",
-  },
-  { company: "SciLeads", title: "Software Engineer", date: "2020 - 2022" },
-];
+import { Container, Divider, TableDivider } from './styled';
 
 const Experience = () => {
   const firstRowRef = useRef(null);
@@ -20,20 +11,20 @@ const Experience = () => {
   const isInView = useInView(firstRowRef, { once: true });
   const isInViewTwo = useInView(secondRowRef, { once: true });
 
-  const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+  const { isEnglish } = useContext(LanguageContext);
 
   return (
     <Container>
       <table>
         <tbody>
-          <tr style={{ height: "8rem" }}>
-            <td>{isEnglish ? "Experience" : "経歴"}</td>
+          <tr style={{ height: '8rem' }}>
+            <td>{isEnglish ? 'Experience' : '経歴'}</td>
           </tr>
 
-          <tr className="table-row" ref={firstRowRef}>
+          <tr className='table-row' ref={firstRowRef}>
             <td>New Edge</td>
             <td>
-              {isEnglish ? "Freelance Developer" : "フリーランスデベロッパー"}
+              {isEnglish ? 'Freelance Developer' : 'フリーランスデベロッパー'}
             </td>
             <td>2022-</td>
           </tr>
@@ -42,20 +33,20 @@ const Experience = () => {
               <TableDivider>
                 <Divider
                   style={{
-                    transform: isInView ? "none" : "translateX(-50vw)",
+                    transform: isInView ? 'none' : 'translateX(-50vw)',
                     // transitionDelay: "0.4",
                     opacity: isInViewTwo ? 1 : 0.2,
                     transition:
-                      "all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
+                      'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
                   }}
                 />
               </TableDivider>
             </td>
           </tr>
-          <tr className="table-row" ref={secondRowRef}>
+          <tr className='table-row' ref={secondRowRef}>
             <td>SciLeads</td>
             <td>
-              {isEnglish ? "Software Engineer" : "ソフトウェアエンジニア"}
+              {isEnglish ? 'Software Engineer' : 'ソフトウェアエンジニア'}
             </td>
             <td>2020-2022</td>
           </tr>
@@ -64,10 +55,10 @@ const Experience = () => {
               <TableDivider>
                 <Divider
                   style={{
-                    transform: isInViewTwo ? "none" : "translateX(-50vw)",
+                    transform: isInViewTwo ? 'none' : 'translateX(-50vw)',
                     opacity: isInViewTwo ? 1 : 0.2,
                     transition:
-                      "all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
+                      'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
                   }}
                 />
               </TableDivider>

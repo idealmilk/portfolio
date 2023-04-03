@@ -4,7 +4,7 @@ import React, {
   ReactNode,
   useState,
   useEffect,
-} from "react";
+} from 'react';
 
 interface ILanguage {
   isEnglish: boolean;
@@ -21,15 +21,21 @@ interface ILanguageProviderProps {
 }
 
 export const LanguageProvider: FC<ILanguageProviderProps> = ({ children }) => {
-  const [state, setState] = useState<ILanguage>(() => {
+  const [loading, setLoading] = useState(true);
+  const [state, setState] = useState<ILanguage>({
+    isEnglish: true,
+    toggleLanguage: () => {},
+  });
+
+  useEffect(() => {
     // Initialize isEnglish state with localStorage value, or default to true
-    const storedIsEnglish = localStorage.getItem("isEnglish");
+    const storedIsEnglish = localStorage.getItem('isEnglish');
     const initialIsEnglish = storedIsEnglish
       ? JSON.parse(storedIsEnglish)
       : true;
 
-    // Return state object with isEnglish and toggleLanguage function
-    return {
+    // Update the state and setLoading to false once everything has been initialized
+    setState({
       isEnglish: initialIsEnglish,
       toggleLanguage: () => {
         setState((prevState) => ({
@@ -37,13 +43,18 @@ export const LanguageProvider: FC<ILanguageProviderProps> = ({ children }) => {
           isEnglish: !prevState.isEnglish,
         }));
       },
-    };
-  });
+    });
+    setLoading(false);
+  }, []);
 
   // Update localStorage value when isEnglish state changes
   useEffect(() => {
-    localStorage.setItem("isEnglish", JSON.stringify(state.isEnglish));
+    localStorage.setItem('isEnglish', JSON.stringify(state.isEnglish));
   }, [state.isEnglish]);
+
+  if (loading) {
+    return <div />;
+  }
 
   return (
     <LanguageContext.Provider value={state}>

@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import React, { useContext } from "react";
+import { motion } from 'framer-motion';
+import React, { useContext } from 'react';
 
-import { LanguageContext } from "context/LanguageContext";
+import { LanguageContext } from 'context/LanguageContext';
 
-import { BannerRow, Container, RowCol, RowLetter, RowTitle } from "./styled";
+import { BannerRow, Container, RowCol, RowLetter, RowTitle } from './styled';
 
 const banner = {
   animate: {
@@ -34,8 +34,8 @@ const AnimatedLetters = ({ title, disabled }: AnimatedLettersProps) => (
   <RowTitle
     as={motion.div}
     variants={disabled ? {} : banner}
-    initial="initial"
-    animate="animate"
+    initial='initial'
+    animate='animate'
   >
     {[...title].map((letter) => (
       <RowLetter as={motion.span} variants={disabled ? {} : letterAni}>
@@ -46,7 +46,7 @@ const AnimatedLetters = ({ title, disabled }: AnimatedLettersProps) => (
 );
 
 const Banner = () => {
-  const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+  const { isEnglish } = useContext(LanguageContext);
 
   return (
     <Container as={motion.div} variants={banner}>
@@ -56,15 +56,15 @@ const Banner = () => {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            ease: "easeInOut",
+            ease: 'easeInOut',
             duration: 1,
             delay: 0.4,
           }}
         >
-          <AnimatedLetters title={isEnglish ? "Frontend" : "フロントエンド"} />
+          <AnimatedLetters title={isEnglish ? 'Frontend' : 'フロントエンド'} />
         </BannerRow>
-        <BannerRow style={{ marginTop: "-7rem" }}>
-          <AnimatedLetters title={isEnglish ? "Engineer" : "エンジニア"} />
+        <BannerRow style={{ marginTop: '-7rem' }}>
+          <AnimatedLetters title={isEnglish ? 'Engineer' : 'エンジニア'} />
         </BannerRow>
       </RowCol>
       <RowCol
@@ -72,12 +72,12 @@ const Banner = () => {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          ease: "easeInOut",
+          ease: 'easeInOut',
           duration: 1,
           delay: 1.4,
         }}
       >
-        <p>{isEnglish ? "Selected Works" : "作例"}</p>
+        <p>{isEnglish ? 'Selected Works' : '作例'}</p>
       </RowCol>
     </Container>
   );
