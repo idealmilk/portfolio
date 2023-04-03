@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 export const Container = styled(motion.div)`
   z-index: 100;
@@ -25,7 +25,8 @@ export const BannerRow = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
     &:first-child {
-      margin-top: 48px;
+      margin-top: 2rem;
+      margin-bottom: 1.8rem;
     }
   }
 `;
@@ -42,6 +43,9 @@ export const RowLetter = styled(motion.span)`
   letter-spacing: -0.8rem;
   display: inline-block;
   white-space: nowrap;
+  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+    font-size: 10rem;
+  }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     font-size: 8rem;
   }

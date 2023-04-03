@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 import { ArrowUpRight } from 'react-feather';
 import styled from 'styled-components';
 
-import { Banner, Footer, Header, Navigation } from 'components';
+import { Banner, Footer, Header, Navigation, SEO } from 'components';
 import Whiteout from 'components/Whiteout';
 import { About, Contact } from 'sections';
 
@@ -106,6 +106,10 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <main ref={ref}>
+      <SEO
+        title='Matthew Gilligan'
+        description='Tokyo-based Frontend Engineer'
+      />
       <Whiteout showWhiteout={showWhiteout} />
       <motion.div
         variants={variants}
