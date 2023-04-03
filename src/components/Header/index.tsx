@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
@@ -8,10 +8,11 @@ import { LanguageContext } from "context/LanguageContext";
 import { Container, HamburgerMenu, HeaderInner, Logo, Nav } from "./styled";
 
 type HeaderProps = {
+  showWhiteout: any;
   setShowWhiteout: any;
 };
 
-const Header = ({ setShowWhiteout }: HeaderProps) => {
+const Header = ({ showWhiteout, setShowWhiteout }: HeaderProps) => {
   const { isEnglish, toggleLanguage } = useContext(LanguageContext);
 
   const handleLanguageToggle = () => {
@@ -21,14 +22,18 @@ const Header = ({ setShowWhiteout }: HeaderProps) => {
     }
 
     setShowWhiteout(true);
-
-    setTimeout(() => {
-      toggleLanguage();
-      if (typeof window !== "undefined") {
-        window.location.reload();
-      }
-    }, 1000);
   };
+
+  useEffect(() => {
+    if (showWhiteout) {
+      setTimeout(() => {
+        toggleLanguage();
+        if (typeof window !== "undefined") {
+          window.location.reload();
+        }
+      }, 1000);
+    }
+  }, [showWhiteout]);
 
   return (
     <Container

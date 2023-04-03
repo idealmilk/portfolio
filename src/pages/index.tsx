@@ -124,7 +124,7 @@ const IndexPage: React.FC<PageProps> = () => {
       >
         {cursorText}
       </motion.div>
-      <Header setShowWhiteout={setShowWhiteout} />
+      <Header showWhiteout={showWhiteout} setShowWhiteout={setShowWhiteout} />
       <Banner />
       <Navigation
         projectEnter={projectEnter}
