@@ -1,11 +1,11 @@
-import { motion, useAnimation } from "framer-motion";
-import React, { MouseEventHandler, useContext, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from 'framer-motion';
+import React, { MouseEventHandler, useContext, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
-import { InnerWrap, ImgWrap, TextWrap } from "components/common/Wraps/styled";
-import { Experience, Image, Spinner, Ticker } from "components";
-import DisplayPic from "images/matt.webp";
-import { LanguageContext } from "context/LanguageContext";
+import { InnerWrap, ImgWrap, TextWrap } from 'components/common/Wraps/styled';
+import { Experience, Image, Spinner, Ticker } from 'components';
+import DisplayPic from 'images/matt.webp';
+import { LanguageContext } from 'context/LanguageContext';
 
 type AboutProps = {
   faceEnter: MouseEventHandler;
@@ -15,11 +15,11 @@ type AboutProps = {
 const AboutContainer = ({ faceEnter, faceLeave }: AboutProps) => {
   const controls = useAnimation();
   const [aboutTextRef, inView] = useInView();
-  const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+  const { isEnglish } = useContext(LanguageContext);
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [controls, inView]);
 
@@ -29,20 +29,20 @@ const AboutContainer = ({ faceEnter, faceLeave }: AboutProps) => {
   };
 
   return (
-    <section id="about">
-      <Ticker text={isEnglish ? "A fearless introduction" : "プロフィール"} />
+    <section id='about'>
+      <Ticker text={isEnglish ? 'A fearless introduction' : 'プロフィール'} />
       <InnerWrap>
         <ImgWrap>
           <div
             onMouseEnter={faceEnter}
             onMouseLeave={faceLeave}
             style={{
-              position: "absolute",
-              height: "180px",
-              width: "160px",
+              position: 'absolute',
+              height: '180px',
+              width: '160px',
               zIndex: 100,
-              top: "70px",
-              left: "160px",
+              top: '70px',
+              left: '160px',
             }}
           />
           <Image image={DisplayPic} />
@@ -51,24 +51,24 @@ const AboutContainer = ({ faceEnter, faceLeave }: AboutProps) => {
           as={motion.div}
           ref={aboutTextRef}
           animate={controls}
-          initial="hidden"
+          initial='hidden'
           variants={textVariants}
         >
           <p>
             {isEnglish
-              ? "Prior to moving to Japan, Matthew worked as a Software Engineer for a data marketing company, before eventually moving on to freelancing as a Web Developer with London based digital agency, New Edge Studio."
-              : "イギリスにてデータマーケティング会社のソフトウェアエンジニアとして働き、退職後デザイン事務所 New Edge Studioにてウェブデベロッパーとしてフリーランス所属。"}
+              ? 'Prior to moving to Japan, Matthew worked as a Software Engineer for a data marketing company, before eventually moving on to freelancing as a Web Developer with London based digital agency, New Edge Studio.'
+              : 'イギリスにてデータマーケティング会社のソフトウェアエンジニアとして働き、退職後デザイン事務所 New Edge Studioにてウェブデベロッパーとしてフリーランス所属。'}
           </p>
           <p>
             {isEnglish
-              ? "His passion for design is evident in every aspect of his work. As he crafts the frontend experience, he carefully considers each element, seeking to create a cohesive whole that is both visually stunning and intuitively usable."
-              : "フロントエンドエクスペリエンスを構築する際には、各要素を慎重に検討し、視覚的に美しく、直感的に使用でき、まとまりのある全体感を作り上げることを追求しています。"}
+              ? 'His passion for design is evident in every aspect of his work. As he crafts the frontend experience, he carefully considers each element, seeking to create a cohesive whole that is both visually stunning and intuitively usable.'
+              : 'フロントエンドエクスペリエンスを構築する際には、各要素を慎重に検討し、視覚的に美しく、直感的に使用でき、まとまりのある全体感を作り上げることを追求しています。'}
           </p>
         </TextWrap>
       </InnerWrap>
-      <InnerWrap style={{ marginBottom: "20rem" }}>
+      <InnerWrap style={{ marginBottom: '20rem' }}>
         <Experience />
-        <Spinner text="Blending functionality with aesthetics - " />
+        <Spinner text='Blending functionality with aesthetics - ' />
       </InnerWrap>
     </section>
   );

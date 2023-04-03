@@ -1,13 +1,13 @@
-import type { PageProps } from "gatsby";
-import React, { useRef, useState } from "react";
-import styled from "styled-components";
-import useMouse from "@react-hook/mouse-position";
-import { motion, useTransform, Variants } from "framer-motion";
-import { ArrowUpRight } from "react-feather";
+import useMouse from '@react-hook/mouse-position';
+import { motion, Variants } from 'framer-motion';
+import type { PageProps } from 'gatsby';
+import React, { useRef, useState } from 'react';
+import { ArrowUpRight } from 'react-feather';
+import styled from 'styled-components';
 
-import { Banner, Footer, Header, Navigation } from "components";
-import { About, Contact, Work } from "sections";
-import Whiteout from "components/Whiteout";
+import { Banner, Footer, Header, Navigation } from 'components';
+import Whiteout from 'components/Whiteout';
+import { About, Contact } from 'sections';
 
 const Content = styled.div`
   position: absolute;
@@ -19,13 +19,12 @@ const Content = styled.div`
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
-  const [isEnglish, setIsEnglish] = useState(true);
-  const [defaultCursorColor, setIsDefaultCursorColor] = useState("black");
+  const [defaultCursorColor, setIsDefaultCursorColor] = useState('black');
 
-  const [cursorText, setCursorText] = useState<string | JSX.Element>("");
-  const [cursorVariant, setCursorVariant] = useState("default");
-  const [projectColor, setProjectColor] = useState("");
-  const [projectTextColor, setProjectTextColor] = useState("");
+  const [cursorText, setCursorText] = useState<string | JSX.Element>('');
+  const [cursorVariant, setCursorVariant] = useState('default');
+  const [projectColor, setProjectColor] = useState('');
+  const [projectTextColor, setProjectTextColor] = useState('');
 
   const [showWhiteout, setShowWhiteout] = useState(false);
 
@@ -35,26 +34,18 @@ const IndexPage: React.FC<PageProps> = () => {
     leaveDelay: 100,
   });
 
-  let mouseXPosition: number | null = 0;
-  let mouseYPosition: number | null = 0;
-
-  if (mouse.x !== null) {
-    mouseXPosition = mouse.clientX;
-  }
-
-  if (mouse.y !== null) {
-    mouseYPosition = mouse.clientY;
-  }
+  const mouseXPosition = mouse.x !== null ? mouse.clientX : 0;
+  const mouseYPosition = mouse.y !== null ? mouse.clientY : 0;
 
   const variants: Variants = {
     default: {
       opacity: 1,
       height: 10,
       width: 10,
-      fontSize: "16px",
+      fontSize: '16px',
       backgroundColor: defaultCursorColor,
-      x: mouseXPosition,
-      y: mouseYPosition,
+      x: mouseXPosition ? mouseXPosition : 0,
+      y: mouseYPosition ? mouseYPosition : 0,
       // transition: {
       //   type: "spring",
       //   mass: 0.6,
@@ -67,57 +58,74 @@ const IndexPage: React.FC<PageProps> = () => {
       border: `1px solid ${projectTextColor}`,
       height: 80,
       width: 80,
-      fontSize: "36px",
-      display: "flex",
-      textAlign: "center",
-      justifyContent: "center",
-      paddingTop: "14px",
+      fontSize: '36px',
+      display: 'flex',
+      textAlign: 'center',
+      justifyContent: 'center',
+      paddingTop: '14px',
       x: mouseXPosition ? mouseXPosition - 32 : 0,
       y: mouseYPosition ? mouseYPosition - 32 : 0,
     },
     contact: {
       opacity: 1,
-      backgroundColor: "transparent",
-      color: "#000",
+      backgroundColor: 'transparent',
+      color: '#000',
       height: 120,
       width: 120,
-      fontSize: "120px",
+      fontSize: '120px',
       x: mouseXPosition ? mouseXPosition - 48 : 0,
       y: mouseYPosition ? mouseYPosition - 48 : 0,
     },
   };
 
   const spring = {
-    type: "spring",
+    type: 'spring',
     stiffness: 500,
     damping: 28,
   };
 
   const projectEnter = () => {
     setCursorText(<ArrowUpRight size={48} />);
-    setCursorVariant("project");
+    setCursorVariant('project');
   };
 
   const projectLeave = () => {
-    setCursorText("");
-    setCursorVariant("default");
+    setCursorText('');
+    setCursorVariant('default');
   };
 
   const faceEnter = () => {
-    setCursorText("🙃");
-    setCursorVariant("contact");
+    setCursorText('🙃');
+    setCursorVariant('contact');
   };
 
   const faceLeave = () => {
-    setCursorText("");
-    setCursorVariant("default");
+    setCursorText('');
+    setCursorVariant('default');
   };
 
   return (
     <main ref={ref}>
+      <Whiteout showWhiteout={showWhiteout} />
+      <motion.div
+        variants={variants}
+        className='cursor'
+        animate={cursorVariant}
+        transition={spring}
+      >
+        {cursorText}
+      </motion.div>
+      <Header showWhiteout={showWhiteout} setShowWhiteout={setShowWhiteout} />
+      <Banner />
+      <Navigation
+        projectEnter={projectEnter}
+        projectLeave={projectLeave}
+        setProjectColor={setProjectColor}
+        setProjectTextColor={setProjectTextColor}
+      />
       <Content
-        onMouseEnter={() => setIsDefaultCursorColor("white")}
-        onMouseLeave={() => setIsDefaultCursorColor("black")}
+        onMouseEnter={() => setIsDefaultCursorColor('white')}
+        onMouseLeave={() => setIsDefaultCursorColor('black')}
       >
         <About faceEnter={faceEnter} faceLeave={faceLeave} />
         {/* <Work /> */}

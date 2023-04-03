@@ -1,30 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import useOnScreen from "../../hooks/useOnScreen";
-import cn from "classnames";
+import React from 'react';
 
-import { Projects } from "data/Projects";
+import { Projects } from 'data/Projects';
 
-import "./styled";
-import GalleryItem from "./Item";
-import { Container } from "./styled";
+import GalleryItem from './Item';
+import './styled';
+import { Container } from './styled';
 
 const Gallery = () => {
-  const [activeImage, setActiveImage] = useState(1);
+  // const [activeImage, setActiveImage] = useState(1);
 
-  const handleUpdateActiveImage = (index: number) => {
-    setActiveImage(index + 1);
-  };
+  // const handleUpdateActiveImage = (index: number) => {
+  //   setActiveImage(index + 1);
+  // };
 
   return (
     <Container>
       {Projects.map((project, index) => (
         <GalleryItem
           key={index}
-          index={index}
+          // index={index}
           {...project}
-          updateActiveImage={handleUpdateActiveImage}
+          // updateActiveImage={handleUpdateActiveImage}
         />
       ))}
     </Container>
