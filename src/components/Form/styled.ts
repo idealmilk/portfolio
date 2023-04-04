@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.form`
   min-height: 160px;
@@ -13,6 +13,56 @@ export const Container = styled.form`
 
 export const FormWrap = styled.div`
   transition: all 0.5s ease;
+
+  button {
+    background: transparent;
+    color: white;
+    border: none;
+    margin: 2rem 0;
+
+    p {
+      position: relative;
+      font-size: 1.6rem;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+        transform: scaleX(0);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+  .loader {
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: ${(props) => `2px solid ${props.theme.colors.blue}`};
+    border-right: ${(props) => `2px solid ${props.theme.colors.red}`};
+    border-bottom: ${(props) => `2px solid ${props.theme.colors.yellow}`};
+    border-left: 2px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export const InputWrap = styled.div`
@@ -25,6 +75,10 @@ export const FormResponse = styled.div`
   color: #969ca0;
   text-align: center;
   transition: all 0.5s ease-in;
+
+  p {
+    font-size: 1.4rem;
+  }
 `;
 
 type InputContainerProps = {
