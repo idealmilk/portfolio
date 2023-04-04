@@ -35,9 +35,14 @@ const letterAni = {
 type AnimatedLettersProps = {
   title: string;
   disabled?: boolean;
+  isEnglish?: boolean;
 };
 
-const AnimatedLetters = ({ title, disabled }: AnimatedLettersProps) => (
+const AnimatedLetters = ({
+  title,
+  disabled,
+  isEnglish,
+}: AnimatedLettersProps) => (
   <RowTitle
     as={motion.div}
     variants={disabled ? {} : banner}
@@ -45,7 +50,11 @@ const AnimatedLetters = ({ title, disabled }: AnimatedLettersProps) => (
     animate='animate'
   >
     {[...title].map((letter) => (
-      <RowLetter as={motion.span} variants={disabled ? {} : letterAni}>
+      <RowLetter
+        as={motion.span}
+        variants={disabled ? {} : letterAni}
+        isEnglish={isEnglish}
+      >
         {letter}
       </RowLetter>
     ))}
@@ -68,13 +77,18 @@ const Banner = () => {
               duration: 1,
               delay: 0.4,
             }}
+            isEnglish={isEnglish}
           >
             <AnimatedLetters
               title={isEnglish ? 'Frontend' : 'フロントエンド'}
+              isEnglish={isEnglish}
             />
           </BannerRow>
           <BannerRow style={{ marginTop: '-7rem' }}>
-            <AnimatedLetters title={isEnglish ? 'Engineer' : 'エンジニア'} />
+            <AnimatedLetters
+              title={isEnglish ? 'Engineer' : 'エンジニア'}
+              isEnglish={isEnglish}
+            />
           </BannerRow>
         </RowCol>
         <RowCol

@@ -35,7 +35,11 @@ export const InnerWrap = styled(motion.div)`
   }
 `;
 
-export const BannerRow = styled.div`
+type EnglishProp = {
+  isEnglish?: boolean;
+};
+
+export const BannerRow = styled.div<EnglishProp>`
   overflow-x: visible;
   overflow-y: hidden;
   display: flex;
@@ -56,7 +60,8 @@ export const BannerRow = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     &:first-child {
-      margin-top: 4rem;
+      margin-top: 3rem;
+      margin-bottom: ${(props) => (props.isEnglish ? '1.8rem' : '5rem')};
     }
   }
 `;
@@ -66,7 +71,7 @@ export const RowTitle = styled(motion.div)`
   white-space: nowrap;
 `;
 
-export const RowLetter = styled(motion.span)`
+export const RowLetter = styled(motion.span)<EnglishProp>`
   font-size: 12rem;
   font-weight: 500;
   position: relative;
@@ -83,6 +88,10 @@ export const RowLetter = styled(motion.span)`
 
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     font-size: 8rem;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    font-size: ${(props) => (props.isEnglish ? '8rem' : '5rem')};
   }
 `;
 
