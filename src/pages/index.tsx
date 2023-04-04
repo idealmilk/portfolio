@@ -80,8 +80,8 @@ const IndexPage: React.FC<PageProps> = () => {
 
   const spring = {
     type: 'spring',
-    stiffness: 500,
-    damping: 28,
+    stiffness: 2000,
+    damping: 100,
   };
 
   const projectEnter = () => {
