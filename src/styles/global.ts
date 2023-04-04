@@ -1,6 +1,6 @@
-import * as styled from "styled-components";
+import * as styled from 'styled-components';
 
-import { defaultTheme } from "./theme";
+import { defaultTheme } from './theme';
 
 const typedTheme: styled.DefaultTheme = defaultTheme;
 
@@ -18,6 +18,10 @@ const GlobalStyles = styled.createGlobalStyle`
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none;
     cursor: none;
+
+    @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+      cursor: revert;
+    }
   }
 
   html::-webkit-scrollbar {
@@ -28,6 +32,7 @@ const GlobalStyles = styled.createGlobalStyle`
   body,
   #root,
   main {
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -88,7 +93,7 @@ const GlobalStyles = styled.createGlobalStyle`
   blockquote:after,
   q:before,
   q:after {
-    content: "";
+    content: '';
     content: none;
   }
 
@@ -130,7 +135,7 @@ const GlobalStyles = styled.createGlobalStyle`
     overflow: hidden;
     &:after {
       position: absolute;
-      content: "";
+      content: '';
       width: 100%;
       height: 100%;
       background: black;
@@ -162,6 +167,10 @@ const GlobalStyles = styled.createGlobalStyle`
     color: #fff;
     text-align: center;
     font-size: 16px;
+
+    @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+      display: none;
+    }
   }
 `;
 

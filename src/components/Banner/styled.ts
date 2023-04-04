@@ -7,19 +7,35 @@ export const Container = styled(motion.div)`
   top: 10rem;
   left: 0;
 
-  display: flex;
-  justify-content: space-between;
   width: 100vw;
   padding: 0 10.8rem 0 9.7rem;
 
+  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+    width: 100%;
+    padding: 0;
+  }
+
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     display: block;
-    padding: 0 2rem;
+  }
+`;
+
+export const InnerWrap = styled(motion.div)`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: block;
   }
 `;
 
 export const BannerRow = styled.div`
-  overflow-y: hidden;
   overflow-x: visible;
   display: flex;
 
@@ -27,6 +43,18 @@ export const BannerRow = styled.div`
     &:first-child {
       margin-top: 2rem;
       margin-bottom: 1.8rem;
+    }
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
+    &:first-child {
+      margin-top: 7rem;
+    }
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    &:first-child {
+      margin-top: 4rem;
     }
   }
 `;
@@ -46,6 +74,11 @@ export const RowLetter = styled(motion.span)`
   @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
     font-size: 10rem;
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
+    font-size: 8rem;
+  }
+
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     font-size: 8rem;
   }
@@ -56,7 +89,13 @@ export const RowCol = styled.div`
   justify-content: center;
 
   p {
-    transform: translate(0, 280px);
+    transform: translate(0, 200px);
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    p {
+      transform: translate(0);
+    }
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {

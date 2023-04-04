@@ -1,26 +1,25 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 export const Container = styled(motion.div)`
   position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
-  height: 10rem;
+  height: 8rem;
   width: 100vw;
   padding: 0 10.8rem;
   font-size: 1.8rem;
   color: ${(props) => props.theme.colors.black};
   z-index: 10000;
+
   @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
-    padding: 0 7.2rem;
+    width: 100%;
     font-size: 1.6rem;
+
+    padding: 0;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    width: 96%;
-    margin: 0 auto;
-    padding: 0;
-    height: 8rem;
     font-size: 1.2rem;
   }
 `;
@@ -48,7 +47,7 @@ export const HeaderInner = styled.div`
     white-space: nowrap;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 2px;
@@ -64,6 +63,11 @@ export const HeaderInner = styled.div`
       transform: scaleX(1);
       transform-origin: bottom left;
     }
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+    width: 90%;
+    margin: 0 auto;
   }
 `;
 
@@ -109,5 +113,9 @@ export const HamburgerMenu = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     display: flex;
+
+    button {
+      margin: 0;
+    }
   }
 `;

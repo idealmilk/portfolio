@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
-import { TileVariants } from ".";
+import { TileVariants } from '.';
 
 export const Container = styled(motion.div)<TileVariants>`
   position: relative;
@@ -47,6 +47,7 @@ export const Container = styled(motion.div)<TileVariants>`
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: block;
     width: 100%;
     height: 18vh;
 
@@ -80,6 +81,10 @@ export const HoverWrap = styled.div`
     font-size: 16rem;
     margin-right: 6rem;
     transform: translateY(-5.5rem);
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: none;
   }
 `;
 
