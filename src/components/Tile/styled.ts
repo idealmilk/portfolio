@@ -62,6 +62,12 @@ export const Container = styled(motion.div)<TileVariants>`
       filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
     }
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    a {
+      padding: 1.4rem;
+    }
+  }
 `;
 
 export const HoverWrap = styled.div`
@@ -100,5 +106,6 @@ export const Row = styled.div`
 
   p {
     font-size: 1.6rem;
+    max-width: 65%;
   }
 `;
