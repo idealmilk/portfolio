@@ -5,7 +5,7 @@ const path = require('path');
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.mgilligan.com`,
   },
   graphqlTypegen: true,
   plugins: [

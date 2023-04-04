@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import CSSRulePlugin from "gsap/CSSRulePlugin";
-import { useInView } from "react-intersection-observer";
+import React, { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import CSSRulePlugin from 'gsap/CSSRulePlugin';
+import { useInView } from 'react-intersection-observer';
 
-import { Container } from "./styled";
+import { Container } from './styled';
 
 type ImageProps = {
   image: string;
@@ -17,31 +17,31 @@ const Image = ({ image }: ImageProps) => {
 
   useEffect(() => {
     if (inView && !hasRun) {
-      let imageReveal = CSSRulePlugin.getRule(".image-container::after");
+      let imageReveal = CSSRulePlugin.getRule('.image-container::after');
       setHasRun(true);
-      gsap.set(containerRef.current, { visibility: "visible" });
+      gsap.set(containerRef.current, { visibility: 'visible' });
 
       gsap
         .timeline()
         .to(imageReveal, {
           duration: 1.4,
-          width: "0%",
-          ease: "power2.inOut",
+          width: '0%',
+          ease: 'power2.inOut',
         })
         .from(imageRef.current, {
           duration: 1.4,
           scale: 1.6,
-          ease: "power2.inOut",
+          ease: 'power2.inOut',
           delay: -1.4,
         });
     }
-  }, [inView, []]);
+  }, [inView, hasRun]);
 
   return (
     <Container ref={containerRef}>
       <>
-        <div className="image-container" ref={imageContainerRef}>
-          <img ref={imageRef} src={image} />
+        <div className='image-container' ref={imageContainerRef}>
+          <img ref={imageRef} src={image} alt='Meeee' />
         </div>
       </>
     </Container>

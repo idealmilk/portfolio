@@ -1,32 +1,28 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
+
+import DefaultImage from 'images/meta-image.png';
 
 type Props = {
   title: string;
   description?: string;
-  image?: string;
   article?: boolean;
 };
 
-const SEO = ({ title, description, image, article }: Props) => {
-  const { pathname } = useLocation();
+const SEO = ({ title, description, article }: Props) => {
   const { site } = useStaticQuery(query);
 
-  const {
-    defaultTitle,
-    titleTemplate,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-  } = site.siteMetadata;
+  const { defaultTitle, titleTemplate, defaultDescription, siteUrl } =
+    site.siteMetadata;
+
+  console.log(DefaultImage);
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`,
+    image: `${siteUrl}${DefaultImage}`,
+    url: siteUrl,
   };
 
   return (
