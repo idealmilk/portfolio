@@ -73,6 +73,7 @@ export const FormWrap = styled.div`
 export const InputWrap = styled.div`
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 `;
 
 export const FormResponse = styled.div`
