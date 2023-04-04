@@ -35,7 +35,7 @@ const Experience = () => {
                   style={{
                     transform: isInView ? 'none' : 'translateX(-50vw)',
                     // transitionDelay: "0.4",
-                    opacity: isInViewTwo ? 1 : 0.2,
+                    opacity: isInView ? 1 : 0.2,
                     transition:
                       'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
                   }}
