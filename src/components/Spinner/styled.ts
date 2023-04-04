@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SpinnerWrap = styled.div`
   position: relative;
@@ -23,7 +22,7 @@ export const SpinnerWrap = styled.div`
     }
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     width: 100%;
     padding-bottom: 2rem;
 

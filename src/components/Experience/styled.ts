@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 export const Container = styled(motion.div)`
   width: 50%;
@@ -22,7 +22,7 @@ export const Container = styled(motion.div)`
     }
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     width: 100%;
 
     td {

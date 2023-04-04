@@ -37,7 +37,9 @@ export const InnerWrap = styled(motion.div)`
 
 export const BannerRow = styled.div`
   overflow-x: visible;
+  overflow-y: hidden;
   display: flex;
+  padding-right: 2rem;
 
   @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
     &:first-child {

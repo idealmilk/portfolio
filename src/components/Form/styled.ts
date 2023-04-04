@@ -5,9 +5,14 @@ export const Container = styled.form`
   width: 40%;
   text-align: center;
 
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    margin: 4rem auto 0;
+    width: 60%;
+  }
+
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    margin-top: 4rem;
-    width: 100%;
+    margin: 4rem auto 0;
+    width: 90%;
   }
 `;
 
