@@ -1,9 +1,8 @@
-import { motion } from "framer-motion";
-import { Link } from "gatsby";
-import React, { useRef, useState, MouseEvent } from "react";
-import Ticker from "react-ticker";
+import { motion } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import Ticker from 'react-ticker';
 
-import { Container, HoverWrap, Row } from "./styled";
+import { Container, HoverWrap, Row } from './styled';
 
 export type TileVariants = {
   backgroundColor: string;
@@ -30,21 +29,21 @@ const Tile = ({ text, url, index, role, year, variants }: TileProps) => {
   const [exitScale, setExitScale] = useState(1);
 
   const mouseEnter = () => {
-    bottomRow.current?.classList.add("bottom-hover");
-    hoverWrap.current?.classList.add("ticker-hover");
+    bottomRow.current?.classList.add('bottom-hover');
+    hoverWrap.current?.classList.add('ticker-hover');
 
     setIsShown(true);
   };
 
   const mouseLeave = () => {
-    hoverWrap.current?.classList.remove("ticker-hover");
-    setTimeout(() => bottomRow.current?.classList.remove("bottom-hover"), 1000);
+    hoverWrap.current?.classList.remove('ticker-hover');
+    setTimeout(() => bottomRow.current?.classList.remove('bottom-hover'), 1000);
     setTimeout(() => setIsShown(false), 1000);
   };
 
   const handleExit = () => {
     if (container.current) {
-      container.current.style.zIndex = "100000";
+      container.current.style.zIndex = '100000';
     }
     setExitScale(8);
   };
@@ -66,17 +65,17 @@ const Tile = ({ text, url, index, role, year, variants }: TileProps) => {
         scale: exitScale,
       }}
       transition={{
-        ease: "easeInOut",
+        ease: 'easeInOut',
         delay: 0.6,
         duration: 1,
       }}
     >
-      <a href={url} target="_blank" rel="noopener noreferrer">
+      <a href={url} target='_blank' rel='noopener noreferrer'>
         <Row>
           <p>{role}</p>
           <p>{year}</p>
         </Row>
-        <Row className="bottom" ref={bottomRow}>
+        <Row className='bottom' ref={bottomRow}>
           <p>{text}</p>
           <p>{index}</p>
         </Row>

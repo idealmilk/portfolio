@@ -19,7 +19,7 @@ const ContactContainer = () => {
 
   const textVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, y: 300 },
+    hidden: { opacity: 0, y: 150 },
   };
 
   return (
