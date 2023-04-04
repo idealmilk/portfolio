@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import LoadingAnimation from 'components/LoadingAnimation';
 
 const Container = styled.div`
   display: none;
@@ -31,7 +32,9 @@ const Whiteout = ({ showWhiteout }: WhiteoutProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-        />
+        >
+          <LoadingAnimation />
+        </Overlay>
       )}
     </Container>
   );

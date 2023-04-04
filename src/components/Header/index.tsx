@@ -31,7 +31,7 @@ const Header = ({ showWhiteout, setShowWhiteout }: HeaderProps) => {
         if (typeof window !== 'undefined') {
           window.location.reload();
         }
-      }, 1000);
+      }, 2000);
     }
   }, [showWhiteout, toggleLanguage]);
 

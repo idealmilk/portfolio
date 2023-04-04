@@ -5,6 +5,7 @@ export { default as Form } from './Form';
 export { default as Gallery } from './Gallery';
 export { default as Header } from './Header';
 export { default as Image } from './Image';
+export { default as LoadingAnimation } from './LoadingAnimation';
 export { default as Navigation } from './Navigation';
 export { default as SEO } from './SEO';
 export { default as Spinner } from './Spinner';

@@ -30,8 +30,8 @@ const IndexPage: React.FC<PageProps> = () => {
 
   const ref = useRef(null);
   const mouse = useMouse(ref, {
-    enterDelay: 100,
-    leaveDelay: 100,
+    enterDelay: 0,
+    leaveDelay: 0,
   });
 
   const mouseXPosition = mouse.x !== null ? mouse.clientX : 0;
