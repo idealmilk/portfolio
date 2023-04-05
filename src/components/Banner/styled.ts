@@ -100,7 +100,7 @@ export const RowCol = styled.div`
   justify-content: center;
 
   p {
-    transform: translate(0, 200px);
+    transform: translate(0, 180px);
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
