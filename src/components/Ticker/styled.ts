@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  overflow: hidden;
+  width: 100vw;
   @-webkit-keyframes ticker {
     0% {
       -webkit-transform: translate3d(0, 0, 0);
