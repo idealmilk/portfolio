@@ -78,20 +78,44 @@ const IndexPage: React.FC<PageProps> = () => {
     },
   };
 
-  const spring = {
+  let spring = {
     type: 'spring',
-    stiffness: 2000,
-    damping: 100,
+    stiffness: 500,
+    damping: 28,
   };
+
+  const allElements = Array.from(
+    document.querySelectorAll('*')
+  ) as HTMLElement[];
 
   const projectEnter = () => {
     setCursorText(<ArrowUpRight size={48} />);
     setCursorVariant('project');
+
+    spring = {
+      type: 'spring',
+      stiffness: 200,
+      damping: 48,
+    };
+
+    for (let i = 0; i < allElements.length; i++) {
+      allElements[i].style.cursor = 'none';
+    }
   };
 
   const projectLeave = () => {
     setCursorText('');
     setCursorVariant('default');
+
+    spring = {
+      type: 'spring',
+      stiffness: 500,
+      damping: 28,
+    };
+
+    for (let i = 0; i < allElements.length; i++) {
+      allElements[i].style.cursor = '';
+    }
   };
 
   const faceEnter = () => {

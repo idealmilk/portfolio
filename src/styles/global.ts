@@ -17,11 +17,6 @@ const GlobalStyles = styled.createGlobalStyle`
     box-sizing: border-box;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none;
-    cursor: none;
-
-    @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
-      cursor: revert;
-    }
   }
 
   html::-webkit-scrollbar {
